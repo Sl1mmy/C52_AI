@@ -4,22 +4,22 @@
 #3. animate (update x fois secondes)
 import random
 
-#pixel valeur (couleur)
-ALIVE = 255
+#pixel states
+ALIVE = 1
 DEAD = 0
-state = [255, 0]
+state = [1, 0]
 
 
 def grid_populate():
     return 
     
-def update(grid_size, grid):
+def update(grid_height, grid_width, grid):
     grid_update = grid.copy()
-    for x in grid_size:
-        for y in grid_size:
+    for x in grid_width:
+        for y in grid_height:
             
             #calcule la somme des voisins (total)
-            total = 0
+            total = int((grid[x, (y-1)%))
             
             #conway's rules:
             if grid[x][y] == ALIVE:
@@ -35,10 +35,11 @@ def update(grid_size, grid):
         
     
 def main():
-    grid_size = 50
+    grid_height = 50
+    grid_width = 50
     
     #
-    grid = [[list(range(0, grid_size))], [list(range(0, grid_size))]]
+    grid = [[list(range(0, grid_height))], [list(range(0, grid_width))]]
     
     #update()
     
